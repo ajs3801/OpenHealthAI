@@ -1,2 +1,2 @@
 # OpenHealthAI
-2022 Medical Hackathon
+2022 - Exercise Web AI Project

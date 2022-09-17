@@ -2,7 +2,7 @@ import warnings
 import sys
 import pandas as pd
 import pickle
-import torch
+
 # javscript에서 list 자료구조로 바로 sys argument로 보내주는 것이 없으므로, string으로 보내줄 수 밖에 없음
 # 이때, input string list에서 , 기준으로 끊고 float 형식으로 바꿔줌
 def PreProcessToList(coordinate_str):

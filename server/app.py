@@ -5,7 +5,7 @@ from flask import Flask, request, render_template
 import pandas as pd
 import pickle
 import warnings
-
+import json
 
 # Declare a Flask app
 app = Flask(__name__)
@@ -31,9 +31,27 @@ def main():
 
     else:
       current_class = "Input"
-        
+    
+    print('up')
     return render_template("test.html", output = current_class)
 
+@app.route('/test', methods=['POST'])
+def test():
+  output = request.get_json()
+  result = json.loads(output) #this converts the json output to a python dictionary
+
+  coordinate_list = result['']
+  print(result)
+
+  if request.method == "POST":
+    coordinate_list = P.PreProcessToList(coordinate_list)
+    current_class = I.Inference(coordinate_list)
+
+  else:
+    current_class = "Input"
+
+  print('down')
+  return render_template("test.html", output = current_class)
 # Running the app
 if __name__ == '__main__':
   app.run('0.0.0.0',port=8000,debug = True)

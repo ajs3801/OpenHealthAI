@@ -7,10 +7,11 @@
     <body>
         <form name="form", method="POST", style="text-align: center;">
             <br>
-            coordinate: <input type="text" name="coordinate_list", placeholder="Enter coordinate" required/>
+            coordinate: <input id="coordinate_value" type="text" name="coordinate_list", placeholder="Enter coordinate" required/>
             <br><br>
-            <button value="Submit">Run</button>
+            <button id="Run" value="Submit">Run</button>
         </form>
         <p style="text-align: center;">{{ output }}</p>
+        <script src="../javascript/send.js"></script>
     </body>
 </html>

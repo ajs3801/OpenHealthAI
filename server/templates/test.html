@@ -25,7 +25,7 @@
             const send = JSON.stringify(dict_values); // Stringify converts a JavaScript object or value to a JSON string
             $.ajax({
                 type:"POST",
-                url : 'http://192.168.2.5:8000',
+                url : 'http://127.0.0.1:8000',
                 data: send,
                 dataType : 'JSON',
                 contentType: "application/json",

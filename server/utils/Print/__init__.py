@@ -1,0 +1,1 @@
+from .PostResult import PostResult

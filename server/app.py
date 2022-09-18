@@ -46,12 +46,18 @@ def connect():
   if request.method == 'POST':
     value_json = request.get_json()
     value = value_json['data']
+    print('#####################################################')
     print('DATA - {}'.format(value))
-    print('DATA TYPE - {}'.format(type(value)))
 
-    value = P.PreProcessToList(value)
-    Inference_value = I.Inference(value)
-    print(Inference_value)
+    print('#####################################################')
+    print('DATA TYPE - {}'.format(type(value)))
+    with warnings.catch_warnings():
+      warnings.simplefilter("ignore")
+      value = P.PreProcessToList(value)
+      Inference_value = I.Inference(value)
+      
+    print('#####################################################')
+    print('RESULT - {}'.format(Inference_value))
 
     return jsonify(result = "success", result2= Inference_value)
   else:

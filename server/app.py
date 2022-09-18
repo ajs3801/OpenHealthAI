@@ -57,7 +57,7 @@ def connect():
     return jsonify(result = "success", result2= Inference_value)
 
   else:
-    return render_template('test.html')
+    return render_template('pose.html')
 
 
 # Running the app

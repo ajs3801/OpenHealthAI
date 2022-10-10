@@ -52,6 +52,15 @@
   </div>
 
   <script>
+    // import { Pose, POSE_CONNECTIONS, LandmarkGrid, PoseConfig } from '@mediapipe/pose'
+    // import * as cam from '@mediapipe/camera_utils'
+    // import { drawConnectors, drawLandmarks} from '@mediapipe/drawing_utils'
+    // import Webcam from 'react-webcam'
+    // import React, { useRef, useEffect } from "react";
+    // import "@tensorflow/tfjs-core";
+    // import "@tensorflow/tfjs-converter";
+    // import "@tensorflow/tfjs-backend-webgl";
+
     const video5 = document.getElementsByClassName('input_video5')[0];
     const out5 = document.getElementsByClassName('output5')[0];
     const controlsElement5 = document.getElementsByClassName('control5')[0];
@@ -70,6 +79,9 @@
     }
 
     function onResultsPose(results) {
+      if (results.poseWorldLandmarks) {
+        console.log('world')
+      }
       document.body.classList.add('loaded');
       fpsControl.tick();
 
@@ -78,6 +90,7 @@
       canvasCtx5.drawImage(
           results.image, 0, 0, out5.width, out5.height);
       
+      // console.log(results.poseWorldLandmarks)
       let coordinate_list = "";
       if (results.poseLandmarks) {
         results.poseLandmarks.forEach(element => {

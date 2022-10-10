@@ -3,7 +3,7 @@ import pandas as pd
 import warnings
 
 def Inference(coordinate_list):
-  with open("../model/ActionV7.pkl", 'rb') as f:
+  with open("../model/ActionWV1.pkl", 'rb') as f:
     model = pickle.load(f)
 
   with warnings.catch_warnings():
